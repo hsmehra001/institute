@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up | Institute Reviews |</title>
+        <link rel="icon" href="IR_3.png" type="image/png" sizes="16x16">        
+        <style>
+          .whole
+            {
+                border:2px solid white;
+                margin-left: 80px;
+                margin-right: 80px;
+                margin-top: 30px;
+                border-radius: 25px;
+                float:inline-start;
+                width: 85%;
+                backdrop-filter: blur(80px);
+                opacity: 0.9;
+            }
+            .imgcontainer {
+             text-align: center;
+             margin: 24px 0 12px 0;
+            }
+            .container {
+             padding: 16px;
+             font-size: 40px;
+             font-family: century gothic;
+             width: fit-content;
+             margin-left: 20%;
+                }
+        </style>
+        <script>
+            function validate()
+            {
+                alert("Account Created.");
+            }
+        </script>
+    </head>
+    <body style="background-image:url('BG2.jpg'); ">
+        <div class="whole">
+            <u><h1 style="font-family: century gothic;text-align: center;font-size: 40px;">Sign Up</h1></u>
+            <div class="imgcontainer">
+                <img src="IR_3.png" alt="Avatar"  height="240" width="240">
+            </div> 
+
+            <div class="container">
+            <form onsubmit="return validate()">
+                <label for="name"><b>Name</b></label>&nbsp&triangleright;
+                <input type="text" placeholder="Name" name="name" id="name" style="height: 30px; " required>
+                <br>
+                <label for="age"><b>Age</b></label>&nbsp&triangleright;
+                <input type="number" placeholder="Age" name="age" id="age" style="height: 30px;" required>
+                <br>
+                <input type="radio" id="male" name="gender" value="male" id="gender" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female" id="gender" required>
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other" id="gender" required>
+                <label for="other">Other</label><br>
+                <label for="uname"><b>Username</b></label>&nbsp&triangleright;
+                <input type="text" placeholder="Enter Username" name="uname" id="uname" style="height: 30px;" required>
+                <br>
+                <label for="psw"><b>Password</b></label>&nbsp&triangleright;
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" style="height: 30px;" required>
+                 <br>   
+                <input type="submit" name="sbmit" value="Sign Up">
+
+            </form>
+            </div>  
+        </div>
+    </body>
+</html>

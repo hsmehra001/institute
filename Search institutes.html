@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Institutes | Institute Review |</title>
+        <link rel="icon" href="IR_3.png" type="image/png" sizes="16x16">
+        <style>
+            .heading{
+                
+                left: 0%;
+                width: 100%;
+                background-color: gray;
+                opacity: 0.8;
+                
+            }            
+            .bg-image{
+                background-image: url("BG2.jpg");
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+                .container {
+            overflow: hidden;
+            }
+            ul{
+           	margin:0px;
+        	padding:0px;
+       	list-style:none;
+    	color:white;
+	    font-family:comic sans ms;
+    	}
+    	ul li{
+    	float:left;
+    	width:200px;
+    	height:35px;
+    	background-color:black;
+    	opacity:.8;
+	    line-height:40px;
+    	font-size:15px;
+    	text-align:center;
+    	margin-right:4px;
+        vertical-align: middle;
+	    }
+    	ul li a{
+    	color:white;
+    	display:block;
+    	}
+    	ul li a:hover{
+    	background-color:green;
+    	}
+    	ul li ul li{
+    	display:none;
+    	margin-top:2px;
+    	}
+    	ul li:hover ul li{
+    	display:block;
+        }
+
+            .filterDiv {
+            float: left;
+            background-color: darkgoldenrod;
+            color: black;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 5px;
+            display: none;
+            opacity: 0.8;
+            border-radius: 25px; 
+            }
+            .filterDiv:hover {
+                background-color: antiquewhite;
+            }
+
+            .show {
+            display: block;
+            }
+
+            .btn {
+            border: 1px solid black;
+            outline: none;
+            padding: 12px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: Century Gothic;
+            }
+
+            .btn:hover {
+            background-color:yellowgreen;
+            }
+
+            .btn.active {
+            background-color: #666;
+            color: white;
+            }
+        </style>
+        <script>
+            Selection_states("allstates")
+            function Selection_states(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "allstates") c = "";
+            for (i = 0; i < x.length; i++) {
+                RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+            }
+            }
+           Selection_stream("allstream")
+            function Selection_stream(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "allstream") c = "";
+            for (i = 0; i < x.length; i++) {
+                RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+            }
+            }
+
+            function AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                element.className += " " + arr2[i];
+                }
+            }
+            }
+
+            function RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+            }
+
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+            }
+        </script>
+    </head>
+    <body class="bg-image">
+
+        <img src="heading_search.jpg" class="heading">
+        <div style="margin-left: 1%;margin-top: 1.5%; top: 0;">
+            <ul>
+                <li><a href="PROJECT.html">HOME</a></li>
+                <li><a href="all.html">Show all Institutes</a>
+                    <ul>
+                       
+                    </ul>
+                </li>
+                <li><a href="Search institutes.html" target="_blank">Search Institutes</a></li>
+                <li><a>Join Us</a>
+                    <ul>
+                        <li><a href="sign up o.html" target="_blank">Sign Up</a></li>
+                    </ul>
+                </li>
+                <li><a>Search By Maps</a>
+                    <ul>
+                        <li><a href="imagemap.html" target="_blank">Kota</a></li>
+                        <li><a >Coming_soon</a></li>
+                    </ul>		
+                </li>
+                <li><a>About us</a>
+                    <ul>
+                        <li><a>Contact us</a></li>
+                        <li><a>What we do??</a></li>
+                    </ul>	
+                </li>
+            </ul>
+            </div>
+            <br><br><br>
+        <a href="all.html"><div data-aos="flip-left" style="margin-top: 5%; font-family: Century Gothic; margin-left: 15%; width: 70%;text-align: center; background-color: grey; color: yellow; border: 2px solid white;opacity: 0.9;"><h1 style="font-family: Century Gothic;">SHOW ALL INSTITUTES</h1></div></a>
+        <div data-aos="flip-left" style="margin-top: 5%; font-family: Century Gothic; margin-left: 15%; width: 70%;text-align: center; background-color: grey; color: yellow; border: 2px solid white;opacity: 0.9;"><h1 style="font-family: Century Gothic;">SELECT STATE</h1>
+            <div id="myBtnContainer" >
+                <button class="btn active" onclick="Selection_states('allstates')"> Show all</button>
+                <button class="btn" onclick="Selection_states('rajasthan')"> Rajasthan</button>
+                <button class="btn" onclick="Selection_states('mp')"> Madhya Pradesh</button>
+                <button class="btn" onclick="Selection_states('delhi')"> Delhi</button>
+                <button class="btn" onclick="Selection_states('haryana')"> Haryana</button>
+              </div>
+             <div class="container">
+                <a href="Vibrant Academy.html" target="_blank"><div class="filterDiv rajasthan">Vibrant</div></a>
+                <a href="Allen.html" target="_blank"><div class="filterDiv delhi haryana">Allen</div></a>
+                <a href="resonance.html" target="_blank"><div class="filterDiv rajasthan mp">Resonance</div></a>
+                <a><div class="filterDiv rajasthan ">Sarvottam</div></a>
+                <a href="Bansal.html" target="_blank"><div class="filterDiv delhi mp rajasthan">Bansal</div></a>
+             </div>
+            </div>
+            <div  data-aos="flip-left" style="margin-top: 5%; font-family: Century Gothic; margin-left: 15%; width: 70%;text-align: center; background-color:grey; color: yellow; border: 2px solid white; opacity: 0.9;"><h1>SELECT STREAM</h1>
+                <div id="myBtnContainer" >
+                    <button class="btn active" onclick="Selection_stream('allstream')"> Show all</button>
+                    <button class="btn" onclick="Selection_stream('JEE')"> JEE</button>
+                    <button class="btn" onclick="Selection_stream('NEET')"> NEET</button>
+                    <button class="btn" onclick="Selection_stream('commerce')"> Commerce</button>
+                  </div>              
+                 <div class="container">
+                    <a href="Vibrant Academy.html" target="_blank"><div class="filterDiv JEE">Vibrant</div></a>
+                    <a href="Allen.html" target="_blank"><div class="filterDiv JEE NEET">Allen</div></a>
+                    <a href="resonance.html" target="_blank"><div class="filterDiv JEE">Resonance</div></a>
+                    <a><div class="filterDiv NEET">Sarvottam</div></a>
+                    <a href="Bansal.html" target="_blank"><div class="filterDiv JEE NEET">Bansal</div></a>
+                    <a><div class="filterDiv commerce">Coming_soon...</div></a>
+                 </div>
+                </div>
+
+    </body>
+</html>
